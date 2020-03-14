@@ -1,0 +1,9 @@
+[
+  {"empno" :  "6000","ename" :  "苏苏", "job" :  "人事部",
+    "hiredate" :  "2020-05-20","salary" :  13000},
+
+  {"empno" :  "5411", "ename" :  "苏酒儿", "job" :  "美术部",
+    "hiredate" :  "2020-05-21","salary" :  21020,
+    "customers" :  [{"cname" :  "启立"},{"cname" : "擎天"}]
+  }
+]
