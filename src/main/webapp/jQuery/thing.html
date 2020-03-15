@@ -1,0 +1,181 @@
+<!DOCTYPE html >
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jQuery实验室</title>
+
+    <style>
+        .myclass {
+            font-style: italic;
+            color: darkblue;
+        }
+        /* 高亮css类 */
+        .highlight {
+            color: red;
+            font-size: 30px;
+            background: lightblue;
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="section">
+    <h2>jQuery选择器实验室</h2>
+    <input style="height: 24px" id="txtSelector" />
+    <button id="btnSelect" style="height: 30px">选择</button>
+    <hr />
+    <div>
+        <p id="welcome">欢迎来到选择器实验室</p>
+        <ul>
+            <li>搜索引擎：<a href="http://www.baidu.com">百度</a> <span> <a
+                    style="color: darkgreen" href="http://www.so.com">360</a>
+				</span>
+            </li>
+            <li>电子邮箱：<a href="http://mail.163.com">网易邮箱</a> <span> <a
+                    style="color: darkgreen" href="http://mail.qq.com">QQ邮箱</a>
+				</span>
+            </li>
+            <li>中国名校：<a href="http://www.tsinghua.edu.cn">清华大学</a> <span>
+						<a style="color: darkgreen" href="https://www.pku.edu.cn/">北京大学</a>
+				</span>
+            </li>
+        </ul>
+
+        <span class="myclass ">我是拥有myclass类的span标签</span>
+
+        <p class="myclass">我是拥有myclass的p标签</p>
+        <form id="info" action="#" method="get">
+            <div>
+                用户名：<input type="text" name="uname" value="admin" /> 密码：<input
+                    type="password" name="upsd" value="123456" />
+            </div>
+            <div>
+                婚姻状况： <select id="marital_status">
+                <option value="1">未婚</option>
+                <option value="2">已婚</option>
+                <option value="3">离异</option>
+                <option value="4">丧偶</option>
+            </select>
+            </div>
+            <div class="left clear-left">
+                <input type="submit" value="提交" /> <input type="reset" value="重置" />
+            </div>
+        </form>
+        <input type="submit" id="end" value="加载完成">
+        <img src="../images/1.png">
+        <div class="loads">正在加载</div>
+        <p>窗口大小调整<span id="size">0</span></p>
+        <div id="scrolls" style="width:200px;height:100px;overflow:scroll;">text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text.
+            <br /><br />
+            text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text. text.</div>
+        <p>滚动了 <span id="num">0</span> 次。</p>
+    </div>
+</div>
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $("p.myclass").on("click",function () {
+        //当前事件产生的对象
+        $(this).css("background-color","red");
+    });
+    
+    $("span.myclass").click(function () {
+        $(this).css("background-color","green")
+    });
+
+    $("input[name='uname']").keypress(function (event) {
+        if(event.keyCode == 32)
+            $(this).css("color","red");
+    });
+
+    //当双击按钮时，隐藏或显示元素：
+    $("button").dblclick(function(){
+        $("p").slideToggle();
+    });
+
+    $("input[type='submit']").mousedown(function () {
+        $("p").slideToggle();
+    });
+
+    $("input[type='submit']").mouseenter(function () {
+        $("input[type='submit']").css("background-color","yellow")
+    });
+
+    $("input[type='submit']").mouseleave(function () {
+        $("input[type='submit']").css("background-color","white")
+    });
+
+    $("#txtSelector").mousemove(function () {
+       $("#txtSelector").css("border","solid 1px green")
+    });
+
+    $("#txtSelector").mouseout(function () {
+       $("#txtSelector").css("border","solid 1px red")
+    });
+
+    $("input[name='uname']").mouseover(function () {
+        $("input[name='uname']").css ("border","solid 1px red")
+    });
+
+    $("input[type='reset']").mouseup(function () {
+       $("input[type='reset']").slideToggle();
+    });
+    
+    $("#txtSelector").keydown(function () {
+       $("#txtSelector").css("background-color","#ffffcc");
+    });
+
+    $("#txtSelector").keyup(function () {
+       $("#txtSelector").css({"background-color":"red","opacity":"0.5"});
+    });
+
+    $("input[name='uname']").change(function () {
+        $(this).css("background-color","#ffffcc")
+    });
+
+    $("form").submit(function () {
+       alert("Submitted")
+    });
+
+    $("input[type='password']").focus(function () {
+        $(this).css("background-color","#ffffcc")
+    });
+
+    $("input[type='password']").blur(function () {
+       $(this).css("background-color","#d6d6ff")
+    });
+
+    $("#end").ready(function () {
+       $("#end").click(function () {
+           $(this).slideToggle();
+       });
+    });
+
+    x = 0;
+    $(window).resize(function () {
+       $("#size").text(x += 1);
+    });
+
+    $("#scrolls").scroll(function () {
+       $("#num").text(x += 1);
+    });
+
+    $(window).unload(function () {
+       alert(Bye);
+    });
+
+    $(document).ready(function(){
+        $("img").load(function(){
+            var st = $("div").text("图像已加载");
+            alert(st);
+        });
+    });
+
+
+
+
+</script>
+</body>
+</html>
