@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-" />
+    <title></title>
+    <script type="text/javascript">
+
+        function bt1() {
+
+
+            //创建input元素
+            var inp = document.createElement("input");
+            inp.type = "text";
+            //传入点击按钮的value值到新的按钮（可以自定义）
+            inp.value = "";
+
+            document.getElementById("div").appendChild(inp);
+
+        }
+
+    </script>
+    <style type="text/css">
+        #div {
+            width: 200px;
+            height: 200px;
+
+        }
+        #div2 {
+            width: 600px;
+            height: 50px;
+
+        }
+        input {
+            margin-left: 21px;
+
+        }
+    </style>
+</head>
+<body>
+<form>
+    <div id="div">
+        <input type="text" id="bt1" value="input1" onclick="bt1()" />
+    </div>
+
+</form>
+<div id="div2">
+    <input type="button" id="bt2" value="添加" onclick="bt1()" />
+
+</div>
+
+</body>
+</html>

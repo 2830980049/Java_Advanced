@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="box">
+        <button id="B">蓝色</button>
+        <button id="G">绿色</button>
+    </div>
+    <div>
+        <input id="colors"  type="text" style="width: 200px;height: 400px;">
+    </div>
+    <div id="find">
+        输入：<input id="finds" type="text"/>
+    </div>
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $("#B").click(function () {
+            $("#colors").css({"background-color":"blue","color":"red"});
+            $("#colors").val("蓝色背景");
+        });
+        $("#G").click(function () {
+            $("#colors").css({"background-color":"green"});
+            $("#colors").val("绿色背景");
+        });
+
+        $("#finds").keypress(function (event) {
+            if(event.keyCode == "66"){
+                $("#colors").css({"background-color":"blue","color":"red"});
+                $(".div2").html("");
+            }
+
+            if(event.keyCode == "71"){
+                $("#colors").css({"background-color":"green","color":"red"});
+                $(this).html("");
+            }
+        });
+
+    </script>
+
+</body>
+</html>
