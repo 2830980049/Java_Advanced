@@ -11,6 +11,7 @@
     <title>Title</title>
     <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript">
+        //第一级
         $(function () {
             $.ajax({
                 "url" : "http://localhost/Advanced_war/Channel_Servlet",
@@ -23,10 +24,11 @@
                         var ch = json[i];
                         $("#lv1").append("<option value='"+ch.code+"'>" + ch.name + "</option>");
                     }
-                 }
+                }
             });
         });
 
+        //第二级
         $(function () {
             $("#lv1").change(function () {
                 var parent = $(this).val();
@@ -51,9 +53,9 @@
     </script>
 </head>
 <body>
-    <select id="lv1" style="width: 200px;height: 30px;">
-        <option selected="selected">请选择</option>
-    </select>
-    <select id="lv2" style="width: 200px;height: 30px;"></select>
+<select id="lv1" style="width: 200px;height: 30px;">
+    <option selected="selected">请选择</option>
+</select>
+<select id="lv2" style="width: 200px;height: 30px;"></select>
 </body>
 </html>
