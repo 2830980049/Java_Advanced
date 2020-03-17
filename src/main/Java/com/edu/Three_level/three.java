@@ -1,13 +1,13 @@
-package com.edu.test;
+package com.edu.Three_level;
 
-public class second {
+public class three {
     private String id;
     private String name;
 
-    public second() {
+    public three() {
     }
 
-    public second(String id, String name) {
+    public three(String id, String name) {
         this.id = id;
         this.name = name;
     }
