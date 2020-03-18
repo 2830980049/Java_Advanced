@@ -4,4 +4,41 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <!--
+    filter标签用于说明哪个类是过滤器，并在应用启动时自动加载
+  <filter>
+    <filter-name>MyFilter</filter-name>
+    <filter-class>com.edu.Filter.MyFilter</filter-class>
+  </filter>
+
+   filter-mapping用于说明过滤器对URL应用的范围
+   filter-name 名称与上面保持一致
+   url-pattern 说明过滤器范围 /*代表对所有URL进行过滤
+
+  <filter-mapping>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  -->
+
+  <!--
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>com.edu.Filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <init-param>
+      <param-name>encoding_1</param-name>
+      <param-value>GBK</param-value>
+    </init-param>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  -->
 </web-app>
